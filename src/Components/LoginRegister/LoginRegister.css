@@ -53,7 +53,7 @@ form .input-box {
     position: relative;
     width: 100%;
     height: 4rem;
-    margin: 2rem 0;
+    margin: 1rem;
 }
 
 .input-box input {
@@ -88,7 +88,7 @@ form .remember-forgot {
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
-    margin: -1rem 0 1rem;
+    margin: 1rem 0 1rem;
     text-align: center;
 }
 
@@ -97,7 +97,7 @@ form .remember-forgot {
     margin-right: 0.2rem;
 }
 
-.remember-forgot a {
+.remember-forgot a {    
     color: #fff;
     text-decoration: none;
 }
@@ -124,15 +124,23 @@ form .register-link {
     margin: 1.2rem 0 0.8rem;
     text-align: center;
     color: #fff;
+    a {
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+            color: blue;
+            transition: 300ms;
+        }
+    }
+
+    
 }
 
-.register-link a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.register-link a:hover {
-    text-decoration: underline;
-    color: blue;
-    transition: 300ms;
+.error-msg {
+    color: red;
+    text-align: center;
+    margin: 0;
+    align-items: center;
 }
