@@ -1,5 +1,5 @@
 import { Button } from "Components/Button";
-import { ErrorMsg } from "Components/ErrorMsg";
+import { Input } from "Components/Input";
 import React, { useState } from "react";
 import { FaLock, FaUser } from "react-icons/fa";
 
@@ -20,31 +20,23 @@ const Login = ({ registerLink }) => {
         action=""
       >
         <h1>Login</h1>
-        <div className="input-box">
-          <input
-            type="text"
-            placeholder="Username"
-            onChange={(item) => setUserName(item.currentTarget.value)}
-            value={userName}
-          />
-          <FaUser className="icon" />
-        </div>
-        <ErrorMsg
-          mensage={"Username invalido"}
-          isVisible={submited && userName.length < 5}
+        <Input
+          type={"text"}
+          placeholder={"Username"}
+          value={userName}
+          onChange={setUserName}
+          icon={<FaUser className="icon" />}
+          errorMensage={"Username invalido"}
+          hasError={submited && userName.length < 5}
         />
-        <div className="input-box">
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={(event) => setPassword(event.currentTarget.value)}
-            value={password}
-          />
-          <FaLock className="icon" />
-        </div>
-        <ErrorMsg
-          mensage={"senha incorreta"}
-          isVisible={submited && password.length < 10}
+        <Input
+          type={"password"}
+          placeholder={"Password"}
+          value={password}
+          onChange={setPassword}
+          icon={<FaLock className="icon" />}
+          errorMensage={"senha invalida"}
+          hasError={submited && password.length < 10}
         />
         <div className="remember-forgot">
           <label>

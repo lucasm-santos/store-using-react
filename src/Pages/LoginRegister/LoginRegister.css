@@ -48,37 +48,6 @@ form h1 {
   text-align: center;
 }
 
-form .input-box {
-  position: relative;
-  width: 100%;
-  height: 4rem;
-  margin: 1rem;
-}
-
-.input-box input {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  outline: none;
-  border-radius: 40px;
-  font-size: 1rem;
-  color: #ffff;
-  padding: 1.2rem 4rem 1.2rem 1.2rem;
-}
-
-.input-box input::placeholder {
-  color: #ffff;
-}
-
-.input-box .icon {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  translate: 0 -50%;
-  font-size: 1rem;
-}
-
 .remember-forgot label {
   display: flex;
 }
