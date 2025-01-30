@@ -1,3 +1,5 @@
+import { Button } from "Components/Button";
+import { ErrorMsg } from "Components/ErrorMsg";
 import React, { useState } from "react";
 import { FaLock, FaUser } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -31,9 +33,10 @@ const Register = ({ loginLink }) => {
           />
           <FaUser className="icon" />
         </div>
-        <p className="error-msg">
-          {userName.length < 5 && userName !== "" && "Username Invalido"}
-        </p>
+        <ErrorMsg
+          mensage={"Username invalido"}
+          isVisible={userName.length < 5 && userName !== ""}
+        />
         <div className="input-box">
           <input
             type="email"
@@ -43,9 +46,10 @@ const Register = ({ loginLink }) => {
           />
           <IoMdMail className="icon" />
         </div>
-        <p className="error-msg">
-          {!emailValid(email) && email !== "" && "o email é invalido"}
-        </p>
+        <ErrorMsg
+          mensage={"o email é invalido"}
+          isVisible={!emailValid(email) && email !== ""}
+        />
         <div className="input-box">
           <input
             type="password"
@@ -57,9 +61,10 @@ const Register = ({ loginLink }) => {
           />
           <FaLock className="icon" />
         </div>
-        <p className="error-msg">
-          {password.length < 10 && password !== "" && "senha muito curta"}
-        </p>
+        <ErrorMsg
+          mensage={"senha muito curta"}
+          isVisible={password.length < 10 && password !== ""}
+        />
         <div className="input-box">
           <input
             type="password"
@@ -70,19 +75,16 @@ const Register = ({ loginLink }) => {
           />
           <FaLock className="icon" />
         </div>
-        <p className="error-msg">
-          {password !== confPassword &&
-            confPassword !== "" &&
-            "senha e confirmar senha precisam ser iguais"}
-        </p>
+        <ErrorMsg
+          mensage={"senha e confirmar senha precisam ser iguais"}
+          isVisible={password !== confPassword && confPassword !== ""}
+        />
         <div className="remember-forgot">
           <label>
             <input type="checkbox" required />I agree to the terms & conditions
           </label>
         </div>
-        <button type="submit" disabled={!loginIsValid}>
-          Register
-        </button>
+        <Button label="Register" disabled={!loginIsValid} />
         <div className="register-link">
           <p>
             Already have an account?{" "}

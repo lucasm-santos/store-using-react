@@ -1,3 +1,5 @@
+import { Button } from "Components/Button";
+import { ErrorMsg } from "Components/ErrorMsg";
 import React, { useState } from "react";
 import { FaLock, FaUser } from "react-icons/fa";
 
@@ -27,9 +29,10 @@ const Login = ({ registerLink }) => {
           />
           <FaUser className="icon" />
         </div>
-        <p className="error-msg">
-          {submited && userName.length < 5 && "Username invalido"}
-        </p>
+        <ErrorMsg
+          mensage={"Username invalido"}
+          isVisible={submited && userName.length < 5}
+        />
         <div className="input-box">
           <input
             type="password"
@@ -39,9 +42,10 @@ const Login = ({ registerLink }) => {
           />
           <FaLock className="icon" />
         </div>
-        <p className="error-msg">
-          {submited && password.length < 10 && "senha incorreta"}
-        </p>
+        <ErrorMsg
+          mensage={"senha incorreta"}
+          isVisible={submited && password.length < 10}
+        />
         <div className="remember-forgot">
           <label>
             <input type="checkbox" />
@@ -49,7 +53,7 @@ const Login = ({ registerLink }) => {
           </label>
           <a href="#">Forgot passowrd?</a>
         </div>
-        <button type="submit">Login</button>
+        <Button label="Login" />
         <div className="register-link">
           <p>
             Don't have an account? <a onClick={registerLink}>Register</a>
