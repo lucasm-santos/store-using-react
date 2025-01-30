@@ -1,0 +1,15 @@
+.register-link {
+  margin: 1.2rem 0 0.8rem;
+  text-align: center;
+  color: #fff;
+  a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      color: blue;
+      transition: 300ms;
+    }
+  }
+}

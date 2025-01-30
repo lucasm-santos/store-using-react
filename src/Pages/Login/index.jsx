@@ -1,5 +1,7 @@
 import { Button } from "Components/Button";
+import { CheckBox } from "Components/CheckBox";
 import { Input } from "Components/Input";
+import { Link } from "Components/Link";
 import React, { useState } from "react";
 import { FaLock, FaUser } from "react-icons/fa";
 
@@ -39,18 +41,15 @@ const Login = ({ registerLink }) => {
           hasError={submited && password.length < 10}
         />
         <div className="remember-forgot">
-          <label>
-            <input type="checkbox" />
-            Remember-me
-          </label>
+          <CheckBox label={"Remember-me"} />
           <a href="#">Forgot passowrd?</a>
         </div>
         <Button label="Login" />
-        <div className="register-link">
-          <p>
-            Don't have an account? <a onClick={registerLink}>Register</a>
-          </p>
-        </div>
+        <Link
+          mensage={"Don't have an account?"}
+          link={"Register"}
+          linkAction={registerLink}
+        />
       </form>
     </div>
   );

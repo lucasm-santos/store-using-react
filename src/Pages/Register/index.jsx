@@ -1,5 +1,7 @@
 import { Button } from "Components/Button";
+import { CheckBox } from "Components/CheckBox";
 import { Input } from "Components/Input";
+import { Link } from "Components/Link";
 import React, { useState } from "react";
 import { FaLock, FaUser } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -62,19 +64,14 @@ const Register = ({ loginLink }) => {
           hasError={password !== confPassword && confPassword !== ""}
         />
         <div className="remember-forgot">
-          <label>
-            <input type="checkbox" required />I agree to the terms & conditions
-          </label>
+          <CheckBox label={"I agree to the terms & conditions"} />
         </div>
         <Button label="Register" disabled={!loginIsValid} />
-        <div className="register-link">
-          <p>
-            Already have an account?{" "}
-            <a href="#" onClick={loginLink}>
-              Sign up
-            </a>
-          </p>
-        </div>
+        <Link
+          mensage={"Already have an account?"}
+          link={"Sign up"}
+          linkAction={loginLink}
+        />
       </form>
     </div>
   );
