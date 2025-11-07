@@ -8,7 +8,7 @@ const LoginRegister = () => {
 
   return (
     <div className={`wrapper${action}`}>
-      <Login registerLink={() => setAction(" active ")} />
+      <Login registerLink={() => setAction(" active")} />
       <Register loginLink={() => setAction("")} />
     </div>
   );

@@ -1,0 +1,10 @@
+.HomeHeader-wrapper {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 3%;
+  height: 4rem;
+  background-color: slateblue;
+  color: white;
+}

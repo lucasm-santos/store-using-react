@@ -1,0 +1,10 @@
+.main-wrapper {
+  display: inline-block;
+  align-items: start;
+  background-color: white;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+}
