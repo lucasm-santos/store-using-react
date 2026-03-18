@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Button } from "Components/Button";
 import { CheckBox } from "Components/CheckBox";
 import { Input } from "Components/Input";
@@ -8,7 +9,9 @@ import { IoMdMail } from "react-icons/io";
 import { emailValid } from "utils/email";
 
 const Register = ({ loginLink }) => {
-  const [userName, setUserName] = useState("");
+
+
+  const [username, setUserName] = useState("");
 
   const [password, setPassword] = useState("");
 
@@ -16,24 +19,40 @@ const Register = ({ loginLink }) => {
 
   const [email, SetEmail] = useState("");
 
+
   const loginIsValid =
     password === confPassword &&
     password.length >= 10 &&
     emailValid(email) !== false &&
-    userName.length > 5;
+    username.length >= 5;
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try{
+      const response = await axios.post('http://localhost:3000/api/auth/register', {username, password, email})
+      if(response.status === 201){
+        loginLink = true
+      }
+    }catch(err){
+      console.log(err)
+    }
+    
+  }
 
   return (
     <div className="form-box register">
-      <form action="">
+      <form action=""
+      onSubmit={handleSubmit}>
         <h1>Registration</h1>
         <Input
           type={"text"}
           placeholder={"Username"}
-          value={userName}
+          value={username}
           onChange={setUserName}
           icon={<FaUser className="icon" />}
           errorMensage="Username invalido"
-          hasError={userName.length < 5 && userName !== ""}
+          hasError={username.length < 5 && username !== ""}
         />
         <Input
           type={email}
@@ -66,7 +85,7 @@ const Register = ({ loginLink }) => {
         <div className="remember-forgot">
           <CheckBox label={"I agree to the terms & conditions"} />
         </div>
-        <Button label="Register" disabled={!loginIsValid} />
+        <Button label="Register" disabled={!loginIsValid} onClick={handleSubmit && loginLink}/>
         <Link
           mensage={"Already have an account?"}
           link={"Sign up"}

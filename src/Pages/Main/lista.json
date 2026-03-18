@@ -1,6 +1,6 @@
 { "produtos": [
         {
-        "image": "../public/images/image-waffle-desktop.jpg",
+        "image": "./public/images/image-waffle-desktop.jpg",
         "name": "Waffle with Berries",
         "category": "Waffle",
         "price": 6.50,
@@ -32,7 +32,7 @@
         },
         {
             "image": {
-                "thumbnail": "./assets/images/image-tiramisu-thumbnail.jpg",
+                "thumbnail": "./public/images/image-tiramisu-thumbnail.jpg",
                 "mobile": "./assets/images/image-tiramisu-mobile.jpg",
                 "tablet": "./assets/images/image-tiramisu-tablet.jpg",
                 "desktop": "./assets/images/image-tiramisu-desktop.jpg"
@@ -84,6 +84,17 @@
             "name": "Salted Caramel Brownie",
             "category": "Brownie",
             "price": 4.50
+        },
+        {
+            "image": {
+                "thumbnail": "./assets/images/image-panna-cotta-thumbnail.jpg",
+                "mobile": "./assets/images/image-panna-cotta-mobile.jpg",
+                "tablet": "./assets/images/image-panna-cotta-tablet.jpg",
+                "desktop": "./assets/images/image-panna-cotta-desktop.jpg"
+            },
+            "name": "Vanilla Panna Cotta",
+            "category": "Panna Cotta",
+            "price": 6.50
         },
         {
             "image": {

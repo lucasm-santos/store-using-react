@@ -4,8 +4,8 @@ import "./style.css";
 
 export const Input = ({
   type,
-  placeholder,
   value,
+  placeholder,
   icon,
   onChange,
   errorMensage = "",
@@ -16,9 +16,9 @@ export const Input = ({
     <>
       <div className="input-container">
         <input
+          value={value}
           type={type}
           placeholder={placeholder}
-          value={value}
           maxLength={maxLength}
           onChange={(event) => onChange(event.currentTarget.value)}
         />
