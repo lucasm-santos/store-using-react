@@ -1,0 +1,33 @@
+.header-wrapper {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 4rem;
+  background-color: slateblue;
+  color: white;
+  .sections-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .title-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header-wrapper {
+    width: max-content;
+    justify-content: center;
+    gap: 1rem;
+    .title-mobile {
+      display: flex;
+    }
+    .title {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.checkLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  input {
+    accent-color: #fff;
+    margin-right: 0.2rem;
+  }
+}

@@ -1,0 +1,90 @@
+.only {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+}
+
+.card-wrapper {
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.5px solid black;
+  width: 15rem;
+  height: 22rem;
+  transition: 1000ms;
+  background-color: rgb(253, 253, 253);
+  justify-content: center;
+  overflow: hidden;
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 1px;
+  }
+  .card-info {
+    margin-top: 0.6rem;
+    display: flex;
+  }
+  .card-value {
+    display: flex;
+    align-items: flex-end;
+  }
+  .card-price {
+    text-decoration: line-through;
+  }
+  .card-rate {
+    display: flex;
+    justify-self: end;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.7rem;
+  }
+  .value {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .card-discount {
+    color: white;
+    background-color: red;
+    width: max-content;
+    padding: 0.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    height: max-content;
+    margin-left: 0.2rem;
+  }
+  .card-link {
+    background-color: slateblue;
+    padding: 0.2rem;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    display: none;
+    color: white;
+  }
+}
+
+.card-wrapper:hover {
+  height: 23.5rem;
+  .card-link {
+    display: flex;
+  }
+}
+
+.card-link:hover {
+  color: rgb(69, 52, 179);
+}
+
+.inativo {
+  display: none;
+}
+
+.lowtext {
+  font-size: 0.6rem;
+  transition: 0.3s;
+}
+
+.lowvalue {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
